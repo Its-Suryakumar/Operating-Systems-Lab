@@ -1,5 +1,5 @@
 #include<stdio.h>
- intmain()
+int main()
  {
  int pid[15];
  int at[15];
@@ -24,7 +24,7 @@
  }
  int i,wt[n];
  wt[0]=0;
- //forcalculatingwaitingtimeofeachprocess
+ //for calculating waiting time of each process
  for(i=1;i<n;i++)
  {
  wt[i]=bt[i-1]+wt[i-1];

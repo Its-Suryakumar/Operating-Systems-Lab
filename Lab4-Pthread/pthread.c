@@ -1,12 +1,12 @@
 /*Write a multithreaded program to compute and display the sum of first N naturalnumbers,the sum of first N odd natural numbers
 and the sum of first N even natural numbers.*/
-#include<stdio.h>
- #include<stdlib.h>
- #include<pthread.h>
- void*sum_natural(void*arg);
- void*sum_odd(void*arg);
- void*sum_even(void*arg);
- intmain()
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+void *sum_natural(void *arg);
+void *sum_odd(void *arg);
+void *sum_even(void *arg);
+int main()
  {
  pthread_t tid1,tid2,tid3;
  int n;
@@ -20,36 +20,36 @@ and the sum of first N even natural numbers.*/
  pthread_join(tid3,NULL);
  return 0;
  }
- void*sum_natural(void*arg)
+ void *sum_natural(void *arg)
  {
- int n=*(int*)arg;
- int sum=0;
- for(int i=1;i<=n;i++)
+ int n = *(int *)arg;
+ int sum = 0;
+ for(int i = 1; i <= n; i++)
  {
- sum+=i;
+ sum += i;
  }
- printf("Sum of first %d natural numbers: %d \n",n,sum);
+ printf("Sum of first %d natural numbers: %d \n", n, sum);
  pthread_exit(NULL); 
  }
- void*sum_odd(void*arg)
+ void *sum_odd(void *arg)
  {
- int n=*(int*)arg;
- int sum=0;
- for(int i=1;i<=n;i+=2)
+ int n = *(int *)arg;
+ int sum = 0;
+ for(int i = 1; i <= n; i += 2)
  {
- sum+=i;
+ sum += i;
  }
- printf("Sum of first %d odd natural numbers: %d \n",n,sum);
+ printf("Sum of first %d odd natural numbers: %d \n", n, sum);
  pthread_exit(NULL);
  }
- void*sum_even(void*arg)
+ void *sum_even(void *arg)
  {
- int n=*(int*)arg;
- int sum=0;
- for(int i=2;i<=n;i+=2)
+ int n = *(int *)arg;
+ int sum = 0;
+ for(int i = 2; i <= n; i += 2)
  {
- sum+=i;
+ sum += i;
  }
- printf("Sum of first %d even natural numbers: %d \n",n,sum);
+ printf("Sum of first %d even natural numbers: %d \n", n, sum);
  pthread_exit(NULL);
- 
+ }
