@@ -11,7 +11,7 @@ for((i=0;i<2;i++))
  small=${nos[0]}
  for((i=0;i<2;i++))
  do
- if [ ${nos[$i]}-lt $small ];then
+ if [ ${nos[$i]} -lt $small ];then
  small=${nos[$i]}
  fi
  done
